@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row">
+    <h3>Enter policy details to create claim</h3>
+    <div class="col form-container">
+      <!-- form elements -->
+      <form [formGroup]="policyDetailsForm">
+        <div>
+          <label>Enter Full Name</label><br />
+          <input
+            data-test-id="fullName"
+            formControlName="fullName"
+            type="text"
+          />
+        </div>
+        <div class="mt-2">
+          <label>Enter Email Address</label><br />
+          <input data-test-id="email" formControlName="email" type="text" />
+        </div>
+        <div class="mt-2">
+          <label>Enter Accident Date</label><br />
+          <input
+            data-test-id="accidentDateTime"
+            type="datetime-local"
+            formControlName="accidentDateTime"
+          />
+        </div>
+      </form>
+
+      <div class="mt-2">
+        <button data-test-id="submit-claim" (click)="claimInsurance()">
+          submit
+        </button>
+      </div>
+
+      <!-- error block element  -->
+      <div class="mt-2 error-container text-danger" *ngIf="isError">
+        <span data-test-id="error">Inputs are empty to create claim</span>
+      </div>
+    </div>
+    <!-- Claim response block -->
+    <div class="col claim-response-container">
+      <div *ngIf="isClaimSubmitted">
+        Successfully created claim with details
+        <div>
+          <label><b>Claim Id :&nbsp;</b> </label>
+          <span data-test-id="claim-id">{{ claimDetails?.claimId }}</span>
+        </div>
+        <div>
+          <label><b>Email Address :&nbsp;</b></label>
+          <span data-test-id="email">{{
+            claimDetails?.policyHolder?.emailAddress
+          }}</span>
+        </div>
+        <div>
+          <label><b>Full Name :&nbsp;</b></label>
+          <span data-test-id="name">{{
+            claimDetails?.policyHolder?.fullName
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

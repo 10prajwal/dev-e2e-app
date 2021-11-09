@@ -1,0 +1,39 @@
+// bootstrap styles
+@import "~bootstrap/scss/functions";
+// Include any default variable overrides here
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/utilities";
+// remove unnecessary utilities
+
+$utilities: map-merge(
+  $utilities,
+  (
+    // borders
+    "border": null,
+    "border-start": null,
+    "border-end": null,
+    "border-top": null,
+    "border-bottom": null,
+    "border-color": null,
+    // fonts
+    "font-family": null,
+    "font-size": null,
+    "font-weight": null,
+    // colors
+    "color": null,
+    "background-color": null,
+    "gradient": null
+  )
+);
+
+// apply utils
+@import "~bootstrap/scss/utilities/api";

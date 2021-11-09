@@ -1,0 +1,11 @@
+spring:
+  h2:
+    console:
+      path: /h2-console
+      enabled: true  jpa:    generate-ddl: true
+    database: h2
+    hibernate:      ddl-auto: create  datasource:    url: jdbc:h2:mem:claim 
+    driver-class-name: org.h2.Driver
+    username: sa  application:    name: claim-management  servlet:    multipart:      enabled: true
+server:  port: 8080
+  servlet:    context-path: /api/claim-management
