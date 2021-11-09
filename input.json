@@ -1,4 +1,4 @@
 {
-    "backendProjectName": "java-spring-file-auto-claim",
-    "uiProjectName": "file-auto-claim"
+    "rootDirectoryBackend": "java-spring-file-auto-claim",
+    "rootDirectoryUI": "file-auto-claim"
 }
